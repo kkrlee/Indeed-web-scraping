@@ -5,17 +5,12 @@
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
-
-from scrapy.exceptions import DropItem
 from scrapy.exporters import CsvItemExporter
-import pandas as pd
-
-
 
 class WriteItemPipeline(object):
 
     def __init__(self):
-        self.filename = 'jobs_claening.csv'
+        self.filename = 'streamingsites2.csv'
 
     def open_spider(self, spider):
         self.csvfile = open(self.filename, 'wb')
